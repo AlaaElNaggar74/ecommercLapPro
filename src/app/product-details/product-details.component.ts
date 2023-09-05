@@ -36,25 +36,25 @@ export class ProductDetailsComponent {
   }
 
 
-  // addPro(proId: any) {
-  //   if (this.myProduct.length == 0) {
-  //     this.myProduct.push(proId);
-  //     console.log('firstelement');
-  //     console.log('cccccccc', proId);
-  //     localStorage.setItem("SimpleMyPr",JSON.stringify(this.myProduct))
+  addPro(proId: any) {
+    if (this.myProduct.length == 0) {
+      this.myProduct.push(proId);
+      console.log('firstelement');
+      console.log('cccccccc', proId);
+      localStorage.setItem("SimpleMyPr",JSON.stringify(this.myProduct))
 
-  //   } else {
-  //     this.myProduct=this.myProduct.filter((ele:any)=>{
-  //       console.log("ele",ele);
-  //       return ele != proId;
+    } else {
+      this.myProduct=this.myProduct.filter((ele:any)=>{
+        console.log("ele",ele);
+        return ele != proId;
 
-  //     });
-  //    this.myProduct.push(proId);
+      });
+     this.myProduct.push(proId);
 
-  //    localStorage.setItem("SimpleMyPr",JSON.stringify(this.myProduct))
+     localStorage.setItem("SimpleMyPr",JSON.stringify(this.myProduct))
       
-  //   }
-  // }
+    }
+  }
 
   goToCartList() {
     this._router.navigate(['addTocartx'], {
