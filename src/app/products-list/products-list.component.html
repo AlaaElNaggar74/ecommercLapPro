@@ -1,0 +1,9 @@
+<h1 class="text-center text-danger mb-3">All Products Items</h1>
+<div class="row">
+  <ng-container *ngFor="let product of products">
+    <app-product-card
+      [inputCardToChild]="product"
+      class="col-md-6 col-lg-4 mb-3"
+    ></app-product-card>
+  </ng-container>
+</div>

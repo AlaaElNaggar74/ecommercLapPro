@@ -1,0 +1,48 @@
+<div class="pb-5">
+  <!-- <div class="d-flex justify-content-end">
+    <button (click)="goToCartList()" class="btn btn-secondary">
+      CartShopping
+    </button>
+  </div> -->
+  <h1 class="mb-5 text-center">
+    Product
+    <span class="text-danger"> [ {{ prodDetails.title }} ]</span>
+    Details
+  </h1>
+  <div class="row m-auto col-11 col-md-12 align-items-center justify-content-between mb-5">
+    <div class="col-md-5 rounded-2 py-4 border border-2 border-black">
+      <img [src]="prodDetails.images[0]" class="w-100" alt="" />
+    </div>
+    <div class="col-md-6 mt-3 mt-md-0">
+      <div class="card-body">
+        <h5 class="card-title mb-2">Category : {{ prodDetails.category }}</h5>
+        <h5 class="card-title mb-2">Brand : {{ prodDetails.brand }}</h5>
+        <p class="card-text">
+          <span class="fw-bold">Description</span>:
+          {{ prodDetails.description }}
+        </p>
+        <h6 class="card-text">Price : {{ prodDetails.price | currency }}</h6>
+        <P>rating {{ prodDetails.rating }} </P>
+        <P>DiscountPercentage {{ prodDetails.discountPercentage }} </P>
+        <div class="btnx">
+          <button class="btn btn-success me-3 px-4" (click)="backHome()">
+            Back
+          </button>
+          <!-- <button class="btn btn-primary" (click)="addPro(prodDetails.id)">
+            AddToCard
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row mt-5">
+    <h1 class="text-center mb-3">Different Image For Product</h1>
+
+    <div class="col-md-4" *ngFor="let imgg of prodDetails.images">
+      <div class="border border-1 border-black mb-3">
+        <img [src]="imgg" class="w-100" alt="" height="250px" />
+      </div>
+    </div>
+  </div>
+</div>
