@@ -1,6 +1,11 @@
 <div class="container">
   <h1 class="text-center mb-5">Your Shopping Products</h1>
 <div class="ovScrol overflow-x-auto">
+  <div class="d-flex justify-content-end py-3">
+    <button (click)="removeAll()" class="btn btn-secondary">
+      RemoveAll
+    </button>
+  </div>
   <table class="table text-center">
     <thead>
       <tr>

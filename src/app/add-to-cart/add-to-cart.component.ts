@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Products } from '../interface/products';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-to-cart',
@@ -621,7 +622,10 @@ export class AddToCartComponent {
   eleX: any = localStorage.getItem('SimpleMyPr');
   xId = JSON.parse(this.eleX);
 
-  constructor(public _ActivatedRoute: ActivatedRoute) {
+  constructor(
+    public _ActivatedRoute: ActivatedRoute,
+    public _location: Location
+  ) {
     this._ActivatedRoute.queryParams.subscribe((data) => {
       for (const obj in data) {
         for (let index = 0; index < this.products.length; index++) {
@@ -637,5 +641,10 @@ export class AddToCartComponent {
     this.myProducts = this.myProducts.filter((ele: any) => {
       return ele.id != idX;
     });
+  }
+
+  removeAll() {
+    localStorage.setItem('SimpleMyPr', JSON.stringify([]));
+    this._location.back();
   }
 }
